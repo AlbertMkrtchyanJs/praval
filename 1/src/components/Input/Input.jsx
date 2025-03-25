@@ -14,7 +14,7 @@ const Input = () => {
             completed : false,
         }
         API.createToDo(dispatch,newToDo)
-        dispatch(changeText(''))
+        dispatch(changeText(text))
     }
 
   return (
