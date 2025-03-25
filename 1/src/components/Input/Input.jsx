@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeText } from "../../store/reducers/ChangeReducer";
-import API from "../../api/api";
+import { changeTC, changeText } from "../../store/reducers/ChangeReducer";
+
 
 const Input = () => {
     const dispatch = useDispatch()
@@ -13,9 +13,10 @@ const Input = () => {
             title : text,
             completed : false,
         }
-        API.createToDo(dispatch,newToDo)
-        dispatch(changeText(text))
+      
+        dispatch(changeTC(newToDo))
     }
+
 
   return (
     <div>

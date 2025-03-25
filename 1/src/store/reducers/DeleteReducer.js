@@ -18,6 +18,12 @@ const DeleteReducer = (state = initState,action) =>{
     }
 }
 
+export const deleteTC = (id) => {
+    return (dispatch) => {
+        API.deleteToDo(dispatch,id)
+    }
+}
+
 export const deleteAC = (id) => ({type: DELETE, payload: id})
 
 export default DeleteReducer

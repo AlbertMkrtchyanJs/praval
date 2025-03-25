@@ -1,3 +1,5 @@
+import API from "../../api/api";
+
 const CHANGE_TEXT = "changeText";
 
 const initState = {
@@ -14,6 +16,14 @@ const ChangeReducer = (state = initState,action) => {
                 default:
                     return state;  
         }
+}
+
+
+export const changeTC = (newToDo) => {
+    return (dispatch) => {
+        API.createToDo(dispatch,newToDo)
+        dispatch(changeText(text))
+    }
 }
 
 export const changeText = (text) => ({type: CHANGE_TEXT, payload: text});
